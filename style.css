@@ -274,3 +274,271 @@ footer.site-footer {
     gap: 20px;
   }
 }
+
+/* Modo Oscuro */
+
+/* === MODO OSCURO === */
+.dark-mode {
+  --bg: #0d1117;
+  --card: #1a1f29;
+  --text: #e4e6eb;
+  --muted: #a1a1aa;
+  --primary: #005f8e; /* azul más oscuro */
+  --primary-2: #0077b6;
+  --accent: #64b9cf;
+  --danger: #ff5c5c;
+  --glass: rgba(32, 33, 36, 0.6);
+  --shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+body.dark-mode {
+  background: linear-gradient(180deg, #0b192d, #00152d 120%);
+  color: #e0e0e0;
+}
+
+
+/* Header */
+.dark-mode header {
+  background: linear-gradient(90deg, #013752, #003856);
+  color: #fff;
+}
+
+/* Nav links */
+.dark-mode nav a {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Tarjetas */
+.dark-mode .card {
+  background: var(--card);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+.dark-mode .card h3 {
+  color: #86a6b6;
+}
+
+.dark-mode .card.highlight {
+    background: linear-gradient(3deg, rgb(0 83 126 / 75%), rgb(33 103 117 / 65%));
+    border: 1px solid rgb(39 217 250 / 20%);
+}
+
+/* Reflexiones */
+.dark-mode .reflexion {
+  background: #1e242f;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.dark-mode .reflexion h3 {
+  color: var(--accent);
+}
+.dark-mode .reflexion small {
+  color: var(--muted);
+}
+
+/* Formularios */
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  background: #202733;
+  border: 1px solid #394150;
+  color: #eaeaea;
+}
+.dark-mode input:focus,
+.dark-mode select:focus,
+.dark-mode textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 6px 18px rgba(0,119,182,0.25);
+}
+
+/* Botones */
+.dark-mode button {
+  color: #fff;
+}
+.dark-mode .btn {
+  background: #003854;
+}
+.dark-mode button.danger,
+.dark-mode .btn.danger {
+  background: var(--danger);
+}
+
+/* Tabla */
+.dark-mode table {
+  background: transparent;
+}
+.dark-mode th,
+.dark-mode td {
+  border-bottom: 1px solid #2c3440;
+  color: var(--text);
+}
+.dark-mode thead th {
+  color: var(--muted);
+}
+
+/* Footer */
+.dark-mode footer.site-footer {
+  color: var(--muted);
+}
+
+/* Contadores y textos secundarios */
+.dark-mode .word-counter {
+  background: rgba(0,0,0,0.3);
+  color: #a1a1aa;
+}
+
+/* === Posición del switch (esquina superior derecha) === */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  width: 50px;
+  height: 26px;
+  background: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2000; /* para que esté por encima de todo */
+}
+
+.theme-toggle:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.theme-toggle .toggle-circle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transition: left 0.3s ease, background 0.3s ease;
+}
+
+/* Modo oscuro visual del switch */
+body.dark-mode .theme-toggle {
+  background: #0077b6;
+}
+
+body.dark-mode .theme-toggle .toggle-circle {
+  left: 26px;
+  background: #fff;
+
+/* Versión en modo oscuro */
+body.dark-mode #logoutBtn {
+  background: #cc3333; /* rojo más oscuro */
+  box-shadow: 0 6px 14px rgba(204, 51, 51, 0.25);
+}
+
+body.dark-mode #logoutBtn:hover {
+  background: #e64545;
+  box-shadow: 0 8px 18px rgba(230, 69, 69, 0.35);
+}
+
+/* Configuracion panel */
+
+/* === ÍCONO DE ENGRANAJE === */
+.settings-icon {
+}
+
+/* === FONDO OSCURECIDO (modal) === */
+.settings-modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+
+/* === CONTENEDOR DE LA VENTANA === */
+.settings-content {
+  background-color: #ffffff;
+  color: #000000;
+  width: 400px;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+
+ .config {
+  background: #00519c;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgb(14 101 148 / 14%);
+  position: fixed;
+  top: 40px;
+  right:10px;
+}
+
+.LogOutBtn{
+  position:fixed;
+  right: 700px;
+  top: 440px;
+  background:#ff4848 ;
+  color:#ffffff;
+  font-size: 1rem;
+}
+
+.close-settings {
+  position: absolute;
+  top: 240px;
+  right: 570px;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+@media (max-width:520px){
+.LogOutBtn{
+  position:fixed;
+  right: 130px;
+  top: 400px;
+  background:#ff4848 ;
+  color:#ffffff;
+  font-size: 1rem;
+}
+}
+
+@media (max-width:520px){
+.close-settings {
+  position: absolute;
+  top: 200px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+}
+
+@media (max-width:520px){
+  .settings-content {
+  background-color: #ffffff;
+  width:350px;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+}
+
+@media (max-width:520px){
+  .config {
+    width: 50px;
+    height: 35px;
+    background: #00519c;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgb(14 101 148 / 14%);
+    position: fixed;
+    top: 10px;
+    right:10px;
+  }
+}
+   
