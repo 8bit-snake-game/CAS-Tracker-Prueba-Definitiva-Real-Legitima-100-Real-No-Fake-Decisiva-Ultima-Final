@@ -421,3 +421,60 @@ document.getElementById("exportWord")?.addEventListener("click", async () => {
   const blob = await Packer.toBlob(doc);
   saveAs(blob, "Reflexiones.docx");
 });
+
+// Modo Oscuro ------------------------------------
+// === Toggle Modo Oscuro ===
+const themeToggle = document.getElementById("themeToggle");
+
+// Detectar si el usuario ya tenía modo oscuro activo
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark-mode");
+}
+
+// Activar/desactivar modo oscuro al hacer clic
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Guardar preferencia
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      localStorage.setItem("darkMode", "disabled");
+    }
+  });
+}
+
+// Configuración -----------------------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+  const settingsIcon = document.getElementById('settingsIcon');
+  const settingsModal = document.getElementById('settingsModal');
+
+  if (!settingsIcon) {
+    console.warn('settingsIcon no encontrado en esta página.');
+    return;
+  }
+  if (!settingsModal) {
+    console.warn('settingsModal no encontrado en esta página.');
+    return;
+  }
+
+  settingsIcon.addEventListener('click', () => {
+    settingsModal.style.display = 'flex';
+  });
+});
+
+const closeSettings = document.getElementById('closeSettings');
+if (closeSettings) {
+  closeSettings.addEventListener('click', () => {
+    settingsModal.style.display = 'none';
+  });
+}
+
+// Cerrar también si se hace click fuera del contenido
+settingsModal.addEventListener('click', (e) => {
+  if (e.target === settingsModal) {
+    settingsModal.style.display = 'none';
+  }
+});
